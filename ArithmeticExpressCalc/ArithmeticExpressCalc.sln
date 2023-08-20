@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArithmeticExpressCalc", "ArithmeticExpressCalc\ArithmeticExpressCalc.csproj", "{2F8146BA-7B7F-42D5-8AF7-0CD571E418CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationService", "OperationService\OperationService.csproj", "{D53D6772-7BC5-4559-BCBE-91AE68FA988A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperationService", "OperationService\OperationService.csproj", "{D53D6772-7BC5-4559-BCBE-91AE68FA988A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArithmeticExpressCalcUnitTest", "ArithmeticExpressCalcUnitTest\ArithmeticExpressCalcUnitTest.csproj", "{39FEB09B-958C-4161-86BC-2AA8C5AA716B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D53D6772-7BC5-4559-BCBE-91AE68FA988A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D53D6772-7BC5-4559-BCBE-91AE68FA988A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D53D6772-7BC5-4559-BCBE-91AE68FA988A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39FEB09B-958C-4161-86BC-2AA8C5AA716B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39FEB09B-958C-4161-86BC-2AA8C5AA716B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39FEB09B-958C-4161-86BC-2AA8C5AA716B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39FEB09B-958C-4161-86BC-2AA8C5AA716B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

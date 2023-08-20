@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj": {}
+    "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj": {
+    "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj",
+        "projectUniqueName": "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj",
         "projectName": "OperationService",
-        "projectPath": "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj",
+        "projectPath": "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj",
         "packagesPath": "C:\\Users\\skla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\OperationService\\obj\\",
+        "outputPath": "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\OperationService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

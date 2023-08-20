@@ -1,0 +1,12 @@
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\bin\Debug\net6.0\OperationService.deps.json
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\bin\Debug\net6.0\OperationService.dll
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\bin\Debug\net6.0\OperationService.pdb
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\OperationService.csproj.AssemblyReference.cache
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\OperationService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\OperationService.AssemblyInfoInputs.cache
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\OperationService.AssemblyInfo.cs
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\OperationService.csproj.CoreCompileInputs.cache
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\OperationService.dll
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\refint\OperationService.dll
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\OperationService.pdb
+C:\Users\skla\source\repos\ULSolutions\ArithmeticExpressCalc\OperationService\obj\Debug\net6.0\ref\OperationService.dll

@@ -8,22 +8,27 @@ namespace OperationService
 {
    internal class Operators : IOperators
    {
-      public async Task<int> Add()
+      /// <inheritdoc/>
+      public int Add()
+      {
+         int test = (1 + 1);
+         return test;
+      }
+
+      /// <inheritdoc/>
+      public int Divide()
       {
          throw new NotImplementedException();
       }
 
-      public async Task<int> Divide()
+      /// <inheritdoc/>
+      public int Multiply()
       {
          throw new NotImplementedException();
       }
 
-      public async Task<int> Multiply()
-      {
-         throw new NotImplementedException();
-      }
-
-      public async Task<int> Subtract()
+      /// <inheritdoc/>
+      public int Subtract()
       {
          throw new NotImplementedException();
       }

@@ -445,11 +445,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\ArithmeticExpressCalc\\ArithmeticExpressCalc.csproj",
+      "projectUniqueName": "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\ArithmeticExpressCalc\\ArithmeticExpressCalc.csproj",
       "projectName": "ArithmeticExpressCalc",
-      "projectPath": "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\ArithmeticExpressCalc\\ArithmeticExpressCalc.csproj",
+      "projectPath": "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\ArithmeticExpressCalc\\ArithmeticExpressCalc.csproj",
       "packagesPath": "C:\\Users\\skla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skla\\source\\repos\\ArithmeticExpressCalc\\ArithmeticExpressCalc\\obj\\",
+      "outputPath": "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\ArithmeticExpressCalc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
