@@ -9,24 +9,24 @@
       /// Add() - Perform Addition
       /// </summary>
       /// <returns>int</returns>
-      int Add();
+      int Add(params int[] numbers);
 
       /// <summary>
       /// Add() - Perform Subtraction
       /// </summary>
       /// <returns>int</returns>
-      int Subtract();
+      int Subtract(params int[] numbers);
 
       /// <summary>
       /// Add() - Perform Multiplication
       /// </summary>
       /// <returns>int</returns>
-      int Multiply();
+      int Multiply(params int[] numbers);
 
       /// <summary>
       /// Add() - Perform Division
       /// </summary>
       /// <returns>int</returns>
-      int Divide();
+      int Divide(params int[] numbers);
    }
 }

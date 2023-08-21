@@ -9,28 +9,39 @@ namespace OperationService
    internal class Operators : IOperators
    {
       /// <inheritdoc/>
-      public int Add()
+      public int Add(params int[] numbers)
       {
-         int test = (1 + 1);
-         return test;
+         int result = 0;
+         foreach (int i in numbers)
+            result += i;
+
+         return result;
       }
 
       /// <inheritdoc/>
-      public int Divide()
+      public int Divide(int num1,  int num2)
       {
-         throw new NotImplementedException();
+         return num1 / num2;
       }
 
       /// <inheritdoc/>
-      public int Multiply()
+      public int Multiply(params int[] numbers)
       {
-         throw new NotImplementedException();
+         int result = 0;
+         foreach (int i in numbers)
+            result *= i;
+
+         return result;
       }
 
       /// <inheritdoc/>
-      public int Subtract()
+      public int Subtract(params int[] numbers)
       {
-         throw new NotImplementedException();
+         int result = 0;
+         foreach (int i in numbers)
+            result -= i;
+
+         return result;
       }
    }
 }
