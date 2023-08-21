@@ -88,6 +88,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "OperationService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/OperationService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OperationService.dll": {}
+        }
       }
     }
   },
@@ -429,10 +439,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "OperationService/1.0.0": {
+      "type": "project",
+      "path": "../OperationService/OperationService.csproj",
+      "msbuildProject": "../OperationService/OperationService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "OperationService >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -474,7 +490,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj": {
+              "projectPath": "C:\\Users\\skla\\source\\repos\\ULSolutions\\ArithmeticExpressCalc\\OperationService\\OperationService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

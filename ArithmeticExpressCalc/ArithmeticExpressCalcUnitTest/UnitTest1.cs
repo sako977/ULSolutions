@@ -1,29 +1,18 @@
+using System.Data;
+
 namespace ArithmeticExpressCalcUnitTest
 {
    public class UnitTest1
    {
-      [Fact]
-      public void Addition()
-      {
-
-      }
+      private readonly OperationService.IOperation operationService = new OperationService.Operation();
 
       [Fact]
-      public void Subtraction()
+      public void RunStringExpressionOperation()
       {
-
-      }
-
-      [Fact]
-      public void Multiplication()
-      {
-
-      }
-
-      [Fact]
-      public void Division()
-      {
-
+         DataTable dt = new DataTable();
+         double result = operationService.PerformOperation("4+5*2");
+         double correctAnswer = Convert.ToDouble(dt.Compute("4+5*2", null));
+         Assert.True(result == correctAnswer, $"You answer {result}, and the correct answer is {correctAnswer}");
       }
    }
 }
