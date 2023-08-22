@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>A simple user interface(UI) for C# web-based API application that evaluates a string expression consisting of non-negative integers and the + - / * operators only, considering the normal mathematical rules of 
+operator precedence. Support for brackets is not required.</h2>
+
+<form>
+  <label>String expression:</label><br>
+  <input type="text" id="strExpression" value="4+5*2"><br><br>
+  <label>Answer:</label><br>
+  <input id="answer"></div><br><br>
+  <button type="button" onclick="httpGet()">OK</button>
+</form> 
+
+<script>
+function httpGet()
+{
+	var url = "https://localhost:7159/Calculate?stringExpression=" + document.getElementById("strExpression").value;
+    var xmlHttp = new XMLHttpRequest();
+		
+	xmlHttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("answer").value = this.responseText;
+		}
+	};
+	
+	xmlHttp.open("GET", url, true);
+    xmlHttp.send();
+}
+</script>
+
+</body>
+</html>
+
+ 
