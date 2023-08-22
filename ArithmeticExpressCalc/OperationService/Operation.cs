@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Data;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace OperationService
 {
@@ -13,90 +8,105 @@ namespace OperationService
       /// <inheritdoc/>
       public double PerformOperation(string stringExpression)
       {
-         // an input string of "4+5/2-1" should output 5.5
+         // Nonnegative integers and the + - / * operators only as stated on the question.
 
          // Used https://regex101.com/ to build the follong Regex patterns.
-         Regex divideRegex = new Regex(@"\d+[\/]\d+");
-         Regex multiplyRegex = new Regex(@"\d+[*]\d+");
-         Regex addRegex = new Regex(@"\d+[+]\d+");
-         Regex subtractRegex = new Regex(@"\d+[-]\d+");
 
-         // Follow BODMAS rule: Support + - / * operators only.
-         double divided = 0;
-         double multiplied = 0;
-         double added = 0;
-         double subtracted = 0;
-
-         DataTable dt = new DataTable();
-         if (divideRegex.IsMatch(stringExpression))
-         {
-            foreach (string item in divideRegex.Matches(stringExpression).Select(m => m.Groups[0].Value).ToArray())
-            {
-               divided += Convert.ToDouble(dt.Compute(item, null));
-               stringExpression = stringExpression.Replace(item, string.Empty);
-               FrequentSymbolSanityCheck(ref stringExpression);
-            }
-         }
-
-         if (multiplyRegex.IsMatch(stringExpression))
-         {
-            foreach (string item in multiplyRegex.Matches(stringExpression).Select(m => m.Groups[0].Value).ToArray())
-            {
-               multiplied += Convert.ToDouble(dt.Compute(item, null));
-               stringExpression = stringExpression.Replace(item, string.Empty);
-               FrequentSymbolSanityCheck(ref stringExpression);
-            }
-         }
-
-         if (addRegex.IsMatch(stringExpression))
-         {
-            foreach (string item in addRegex.Matches(stringExpression).Select(m => m.Groups[0].Value).ToArray())
-            {
-               added += Convert.ToDouble(dt.Compute(item, null));
-               stringExpression = stringExpression.Replace(item, string.Empty);
-               FrequentSymbolSanityCheck(ref stringExpression);
-            }
-         }
-
-         if (subtractRegex.IsMatch(stringExpression))
-         {
-            foreach (string item in subtractRegex.Matches(stringExpression).Select(m => m.Groups[0].Value).ToArray())
-            {
-               subtracted += Convert.ToDouble(dt.Compute(item, null));
-               stringExpression = stringExpression.Replace(item, string.Empty);
-               FrequentSymbolSanityCheck(ref stringExpression);
-            }
-         }
-
-         FrequentSymbolSanityCheck(ref stringExpression);
+         List<Regex> regexes = new List<Regex>()
+         { 
+            // Follow BODMAS rule here.
+            new Regex(@"\d+[\/]\d+"), // Divison
+            new Regex(@"\d+[*]\d+"),  // Multiplication
+            new Regex(@"\d+[+]\d+"),  // Addition
+            new Regex(@"\d+[-]\d+")   // Subtraction
+         };
 
          double result = 0;
-         if (!string.IsNullOrWhiteSpace(stringExpression))
-            result = Convert.ToDouble(stringExpression);
+         foreach (Regex regex in regexes)
+            result += ArithmeticCalc(ref stringExpression, regex);
 
-           result =  result + divided + multiplied + added + subtracted;
+         if (!string.IsNullOrWhiteSpace(stringExpression)) // Remove trailing symbols before adding.
+            result += Convert.ToDouble(stringExpression.Remove(stringExpression.Length - 1));
+
          return result;
       }
 
-      private void FrequentSymbolSanityCheck(ref string strExpression)
+      public double Divide(double first, double second)
+      {
+         return first / second;
+      }
+
+      public double Multiply(double first, double second)
+      {
+         return first * second;
+      }
+
+      public double Subtract(double first, double second)
+      {
+         return first - second;
+      }
+
+      public double Add(double first, double second)
+      {
+         return first + second;
+      }
+
+      private double ArithmeticCalc(ref string stringExpression, Regex regex)
+      {
+         // Follow BODMAS rule: Support + - / * operators only.
+
+         double finalValue = 0;
+         if (regex.IsMatch(stringExpression))
+         {
+            foreach (string item in regex.Matches(stringExpression).Select(m => m.Groups[0].Value).ToArray())
+            {
+               if (item.Contains("/"))
+               {
+                  string[] splitted = item.Split('/');
+                  finalValue += Divide(Convert.ToDouble(splitted[0]), Convert.ToDouble(splitted[1]));
+               }
+               else if (item.Contains("*"))
+               {
+                  string[] splitted = item.Split('*');
+                  finalValue += Multiply(Convert.ToDouble(splitted[0]), Convert.ToDouble(splitted[1]));
+               }
+               else if (item.Contains("+"))
+               {
+                  string[] splitted = item.Split('+');
+                  finalValue += Add(Convert.ToDouble(splitted[0]), Convert.ToDouble(splitted[1]));
+               }
+               else if (item.Contains("-"))
+               {
+                  string[] splitted = item.Split('-');
+                  finalValue += Subtract(Convert.ToDouble(splitted[0]), Convert.ToDouble(splitted[1]));
+               }
+
+               stringExpression = stringExpression.Replace(item, string.Empty);
+               FrequentSymbolsSanityChecks(ref stringExpression);
+            }
+         }
+
+         return finalValue;
+      }
+
+      private void FrequentSymbolsSanityChecks(ref string strExpression)
       {
          if (strExpression.Contains("+-"))
+         {
             strExpression = strExpression.Replace("+-", "-");
-
-         if (strExpression.Contains("-+"))
+         }
+         else if (strExpression.Contains("-+"))
+         {
             strExpression = strExpression.Replace("-+", "-");
-
-         if (strExpression.Contains('/'))
-            strExpression = strExpression.Replace("/", string.Empty);
-
-         if (strExpression.Contains('*'))
-            strExpression = strExpression.Replace("*", string.Empty);
-
-         if (strExpression.Contains('+'))
-            strExpression = strExpression.Replace("+", string.Empty);
-
-         if (strExpression.Contains('-'))
-            strExpression = strExpression.Replace("-", string.Empty);
+         }
+         else if (strExpression.Contains("++"))
+         {
+            strExpression = strExpression.Replace("++", "+");
+         }
+         else if (strExpression.Contains("--"))
+         {
+            strExpression = strExpression.Replace("--", "+");
+         }
       }
    }
 }

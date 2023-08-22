@@ -17,19 +17,25 @@ namespace ArithmeticExpressCalc.Controllers
       public IActionResult Get(string stringExpression)
       {
          //GET api/ControllerName?stringExpression={value}
-
-         // Check for non negative numbers
-         if (stringExpression.StartsWith('-') 
-            || stringExpression.Contains("+-")
-            || stringExpression.Contains("--")
-            || stringExpression.Contains("*-")
-            || stringExpression.Contains("/-"))
+         try
          {
-            return BadRequest("Only positive numbers allowed.");
-         }
+            // Check for non negative numbers
+            if (stringExpression.StartsWith('-')
+               || stringExpression.Contains("+-")
+               || stringExpression.Contains("--")
+               || stringExpression.Contains("*-")
+               || stringExpression.Contains("/-"))
+            {
+               throw new Exception("Only positive numbers allowed.");
+            }
 
-         var result = operationService.PerformOperation(stringExpression);
-         return Ok(result);
+            var result = operationService.PerformOperation(stringExpression);
+            return Ok(result);
+         }
+         catch (Exception ex)
+         {
+            return BadRequest(ex.Message);
+         }
       }
    }
 }
