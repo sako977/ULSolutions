@@ -31,26 +31,36 @@ namespace OperationService
          return result;
       }
 
+      /// <inheritdoc/>
       public double Divide(double first, double second)
       {
          return first / second;
       }
 
+      /// <inheritdoc/>
       public double Multiply(double first, double second)
       {
          return first * second;
       }
 
+      /// <inheritdoc/>
       public double Subtract(double first, double second)
       {
          return first - second;
       }
 
+      /// <inheritdoc/>
       public double Add(double first, double second)
       {
          return first + second;
       }
 
+      /// <summary>
+      /// ArithmeticCalc - Determine the type of calculation and perform it
+      /// </summary>
+      /// <param name="stringExpression"></param>
+      /// <param name="regex"></param>
+      /// <returns></returns>
       private double ArithmeticCalc(ref string stringExpression, Regex regex)
       {
          // Follow BODMAS rule: Support + - / * operators only.
@@ -89,6 +99,10 @@ namespace OperationService
          return finalValue;
       }
 
+      /// <summary>
+      /// FrequentSymbolsSanityChecks - Checks on string expression
+      /// </summary>
+      /// <param name="strExpression"></param>
       private void FrequentSymbolsSanityChecks(ref string strExpression)
       {
          if (strExpression.Contains("+-"))
